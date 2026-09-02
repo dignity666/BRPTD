@@ -1,0 +1,29 @@
+[package]
+name = "brptd_ristretto_backend"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+publish = false
+
+[lib]
+name = "brptd_ristretto_backend"
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = []
+extension-module = ["pyo3/extension-module"]
+
+[dependencies]
+bulletproofs = "5.0.0"
+curve25519-dalek = { version = "4.1.3", features = ["digest", "rand_core"] }
+merlin = "3.0.0"
+pyo3 = { version = "0.29.2", features = ["abi3-py310"] }
+rand = "0.8.5"
+rand_chacha = "0.3.1"
+rand_core = "0.6.4"
+sha2 = "0.10.9"
+thiserror = "2.0.17"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1

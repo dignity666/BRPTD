@@ -1,0 +1,68 @@
+# Python 字节码与工具缓存
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.coverage
+.coverage.*
+htmlcov/
+
+# Python 构建与安装产物
+build/
+dist/
+*.egg-info/
+*.egg
+*.whl
+*.so
+*.pyd
+*.dylib
+
+# 本地虚拟环境
+.venv/
+venv/
+env/
+ENV/
+.deps/
+
+# 编辑器与操作系统文件
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# 原始数据、缓存与派生数据；清单和测试夹具仍可跟踪
+data/raw/
+data/cache/
+data/downloads/
+data/interim/
+data/processed/
+!data/manifests/
+!data/manifests/*.json
+!tests/fixtures/
+!tests/fixtures/**
+
+# 实验与评估产物
+artifacts/
+outputs/
+reports/
+results/
+benchmarks/output/
+
+# Rust 与 maturin 构建产物
+target/
+
+# LaTeX 生成文件；论文依赖的源图不会被通配忽略
+paper/*.aux
+paper/*.bbl
+paper/*.bcf
+paper/*.blg
+paper/*.fdb_latexmk
+paper/*.fls
+paper/*.log
+paper/*.out
+paper/*.run.xml
+paper/*.synctex.gz
+paper/main.pdf

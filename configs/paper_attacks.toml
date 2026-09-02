@@ -1,0 +1,50 @@
+[run]
+proof_mode = "sampled"
+bin_count = 8192
+bootstrap_resamples = 10000
+bootstrap_seed = 20260901
+parallelism = 1
+
+[datasets.ibrl]
+worker_count = 50
+malicious_count = 15
+
+[datasets.bmaq]
+worker_count = 12
+malicious_count = 4
+
+[protocol]
+window_length = 5
+decay = 0.8
+alpha = 1.0
+beta = 1.0
+cold_start = 0.2
+cook_k = 6.0
+minimum_scale = 1.5
+effective_parameter_ratio = 0.6
+minimum_leverage = 0.01
+maximum_leverage = 0.25
+leverage_exponent = 1.0
+epsilon = 0.000001
+hampel_z_max = 12.0
+hampel_a = 1.5
+hampel_b = 3.0
+hampel_c = 4.5
+
+[trials]
+ids = [202600, 202601, 202602, 202603, 202604, 202605, 202606, 202607, 202608, 202609, 202610, 202611, 202612, 202613, 202614, 202615, 202616, 202617, 202618, 202619]
+outer_starts = [0.40, 0.55, 0.70, 0.85]
+outer_fraction = 0.15
+embargo_rounds = 15
+block_length = 15
+blocks_per_fold = 5
+minimum_coverage = 0.80
+
+[attacks]
+names = ["bias", "drift", "spike", "flip", "fang"]
+bias = 1.8
+drift_per_round = 0.13
+spike_upper_probability = 0.85
+fang_step_size = 0.65
+fang_maximum_steps = 12
+fang_tolerance = 0.000001

@@ -1,0 +1,14 @@
+[build-system]
+requires = ["maturin>=1.9,<2"]
+build-backend = "maturin"
+
+[project]
+name = "brptd-ristretto-backend"
+version = "0.1.0"
+requires-python = ">=3.10"
+description = "Ristretto255 residual-bin proof backend for BRPTD"
+
+[tool.maturin]
+bindings = "pyo3"
+module-name = "brptd_ristretto_backend"
+features = ["extension-module"]
